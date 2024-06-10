@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 GitHub Issue Classifier
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a GitHub Issue Classifier that leverages machine learning to categorize GitHub issues into different types such as bug, enhancement, and question. The model is trained using the dataset `github-labels-top3-803k-train.tar.gz` and `test.tar.gz`. Initially, the model was trained on Databricks (GCP Compute) using PySpark and scikit-learn. Due to limited resources on Databricks, the deployment was transitioned to PythonAnywhere, maintaining consistent functionality. The classifier achieves 85% accuracy using Logistic Regression.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **Training on Databricks with PySpark**: Utilizes PySpark for scalable model training on Databricks.
+- **Logistic Regression**: Achieves 85% accuracy in classifying GitHub issues.
+- **PythonAnywhere Deployment**: Deployed on PythonAnywhere for consistent and reliable model inference.
+- **Flask Integration**: The model inference is served through a Flask API.
+- **React Frontend**: A React-based frontend to interact with the model and visualize predictions.
+
+## 📂 Project Structure
+
+- `Header.js`: Displays the header of the application with the model training information.
+- `Form.js`: Contains the form to input issue details and get predictions.
+- `Loader.js`: Displays a loading animation while waiting for model predictions.
+- `Notice.js`: Displays a banner notification regarding the deployment shift.
+- `api/run-py-model.js`: Handles API requests to the Flask backend running the scikit-learn model.
+- `api/trigger-job.js`: Manages API requests to Databricks to trigger job runs and fetch results.
+
+## 🖥️ Usage
+
+### Try It Out
+
+Check out the live version of the GitHub Issue Classifier [here](http://your-deployment-link.com).
+
+## 📋 API Endpoints
+
+### `/api/run-py-model`
+
+- **Method**: POST
+- **Description**: Runs the model inference using the Flask backend.
+- **Request Body**:
+  ```json
+  {
+    "issue_title": "Issue title",
+    "issue_body": "Issue body"
+  }
+- **Response**:
+ ```json
+  {
+    "predicted_issue_type": "Bug"
+  }
 ```
+### `/api/trigger-job`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Method**: POST
+- **Description**: Triggers a Databricks job to run the model training notebook.
+- **Request Body**:
+  ```json
+  {
+    "issue_title": "Issue title",
+    "issue_body": "Issue body"
+  }
+- **Response**:
+ ```json
+  {
+    "predicted_issue_type": "Bug"
+  }
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+## 👤 About Me
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I am Dipit Vasdev, a highly motivated problem solver with a passion for neural networks and machine learning. I recently completed my Master's degree in Computer Engineering at New York University, and my greatest strength lies in my drive for solving complex problems in computer science. I possess a wealth of technical skills in machine learning, deep learning, Android development, and more, and I have taken part in various projects and internships to continuously improve my skills and knowledge.
 
-## Learn More
+## 🔗 Links
 
-To learn more about Next.js, take a look at the following resources:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dipit-vasdev/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🗣️ Feedback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any feedback, please reach out to me at [dipit.vasdev@nyu.edu](mailto:dipit.vasdev@nyu.edu).
