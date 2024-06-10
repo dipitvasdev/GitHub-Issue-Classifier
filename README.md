@@ -44,8 +44,8 @@ Check out the live version of the GitHub Issue Classifier [here](http://your-dep
   {
     "predicted_issue_type": "Bug"
   }
-
-### `/api/run-py-model`
+```
+### `/api/trigger-job`
 
 - **Method**: POST
 - **Description**: Triggers a Databricks job to run the model training notebook.
@@ -61,13 +61,14 @@ Check out the live version of the GitHub Issue Classifier [here](http://your-dep
     "predicted_issue_type": "Bug"
   }
 
+```
 ## 👤 About Me
 
 I am Dipit Vasdev, a highly motivated problem solver with a passion for neural networks and machine learning. I recently completed my Master's degree in Computer Engineering at New York University, and my greatest strength lies in my drive for solving complex problems in computer science. I possess a wealth of technical skills in machine learning, deep learning, Android development, and more, and I have taken part in various projects and internships to continuously improve my skills and knowledge.
 
 ## 🔗 Links
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yourprofile)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dipit-vasdev/)
 
 ## 🗣️ Feedback
 
