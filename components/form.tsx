@@ -7,6 +7,10 @@ import { FcHighPriority, FcIdea, FcLowPriority, FcMediumPriority } from "react-i
 import { IoSend } from "react-icons/io5";
 import { FaRepeat } from "react-icons/fa6";
 import toast from 'react-hot-toast';
+function capitalizeFirstLetter(str: string): string {
+  if (str.length === 0) return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 export default function Form() {
   const [output, setOutput] = useState<string | null>(null);
@@ -52,7 +56,7 @@ export default function Form() {
       
       let result = responseText ? JSON.parse(responseText) : {};
       const resultString: string = result.predicted_issue_type
-      setOutput(resultString.toWellFormed());
+      setOutput(capitalizeFirstLetter(resultString));
       toast.success("Model Prediction Success");
     } catch (err) {
       setError((err as Error).message);
