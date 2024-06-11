@@ -4,6 +4,9 @@
 
 This project is a GitHub Issue Classifier that leverages machine learning to categorize GitHub issues into different types such as bug, enhancement, and question. The model is trained using the dataset `github-labels-top3-803k-train.tar.gz` and `github-labels-top3-803k-test.tar.gz`. Initially, the model was trained on Databricks (GCP Compute) using PySpark and scikit-learn. Due to limited resources on Databricks, the deployment was transitioned to PythonAnywhere, maintaining consistent functionality. The classifier achieves 85% accuracy using Logistic Regression.
 
+![Example1](https://i.ibb.co/KxwhLWm/Screenshot-2024-06-10-at-9-14-18-PM.png)
+![Example2](https://i.ibb.co/sV7Rxwp/Screenshot-2024-06-10-at-9-14-25-PM.png)
+
 ## ✨ Features
 
 - **Training on Databricks with PySpark**: Utilizes PySpark for scalable model training on Databricks.
